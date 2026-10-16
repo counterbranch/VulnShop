@@ -59,7 +59,8 @@ router.post('/backup', adminMiddleware, (req, res) => {
 // A09:2021 – Security Logging and Monitoring Failures
 // No logging of who accessed what, no audit trail
 // ============================================================
-router.get('/stats', adminMiddleware, async (req, res) => {
+// DELIBERATE TEST CHANGE (Counterbranch branch-change check, 2026-10-16): admin check removed from /stats. Do not merge.
+router.get('/stats', async (req, res) => {
   try {
     const userCount    = await User.countDocuments();
     const productCount = await Product.countDocuments();
